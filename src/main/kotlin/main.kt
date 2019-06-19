@@ -29,7 +29,7 @@ fun main(args: Array<String>) {
     irohaAPI.transactionSync(tx)
     repeat(10) {
         println(irohaAPI.txStatusSync(Utils.hash(tx)))
-        Thread.sleep(10)
+        Thread.sleep(1000)
     }
 
     val resp = irohaAPI.query(Query.builder(adminId, 1).getAccountAssets(adminId).buildSigned(adminKeys))
